@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Singleton Tabs settings</title>
+    <link rel="stylesheet" href="../shared/theme.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">1</span>
+          <div>
+            <h1>Singleton Tabs</h1>
+            <p class="muted">Choose which web apps get one canonical tab.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="card panel" aria-labelledby="behavior-heading">
+        <h2 id="behavior-heading">Behavior</h2>
+        <div class="settings-grid">
+          <label>
+            Singleton scope
+            <select id="scope">
+              <option value="window">One per browser window</option>
+              <option value="profile">One across all browser windows</option>
+            </select>
+          </label>
+          <label class="check-row">
+            <input id="organize" type="checkbox" />
+            <span>
+              <strong>Organize canonical tabs first</strong>
+              <small>Sorted by rule order. Grouped tabs stay where they are.</small>
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card panel" aria-labelledby="add-heading">
+        <h2 id="add-heading">Add a singleton</h2>
+        <form id="add-rule" class="add-grid" novalidate>
+          <label>
+            Label
+            <input id="new-label" type="text" maxlength="80" placeholder="Calendar" />
+          </label>
+          <label>
+            HTTP(S) URL prefix
+            <input id="new-prefix" type="url" maxlength="2048" placeholder="https://calendar.example.com/" required />
+          </label>
+          <button class="primary" type="submit">Add rule</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="rules-heading">
+        <div class="section-heading">
+          <div>
+            <h2 id="rules-heading">Rules</h2>
+            <p class="muted">Order controls both match ties and tab-strip sorting.</p>
+          </div>
+          <span id="rule-count" class="count"></span>
+        </div>
+        <div id="empty-state" class="card empty" hidden>
+          Add a prefix to start reusing singleton tabs.
+        </div>
+        <div id="rules" class="rules"></div>
+      </section>
+
+      <p id="status" class="status sticky-status" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+body {
+  width: 340px;
+}
+
+main {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.brand p {
+  margin-bottom: 0;
+}
+
+.current {
+  position: relative;
+  min-height: 112px;
+  padding: 15px;
+}
+
+.current strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.full {
+  width: 100%;
+}
+
+.secondary-actions button {
+  flex: 1 1 130px;
+}
