@@ -9,6 +9,15 @@ The extension has no build step, runtime dependencies, content scripts, remote
 code, telemetry, or network service. Fresh installs include enabled rules for
 Gmail and Google Calendar; both can be edited, disabled, reordered, or removed.
 
+## Project links
+
+- [Install](#install-the-unpacked-extension)
+- [Configure rules](#configure-singleton-rules)
+- [Architecture](ARCHITECTURE.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
+- [Release notes](CHANGELOG.md)
+
 ## Install the unpacked extension
 
 1. Open `chrome://extensions`.
@@ -188,3 +197,13 @@ recovery is required.
 
 See [`ARCHITECTURE.md`](ARCHITECTURE.md) for component boundaries, state,
 event flow, and privacy constraints.
+
+## Contributing
+
+Bug reports, feature proposals, documentation improvements, and focused pull
+requests are welcome. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a
+change and follow the [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) in project spaces.
+
+## License
+
+Singleton Tabs is available under the [MIT License](LICENSE).

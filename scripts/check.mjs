@@ -17,6 +17,7 @@ function walk(directory, predicate) {
 }
 
 const manifest = JSON.parse(readFileSync(join(root, "manifest.json"), "utf8"));
+const packageMetadata = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
 assert.equal(manifest.manifest_version, 3);
 assert.deepEqual([...manifest.permissions].sort(), ["storage", "tabs"]);
 assert.equal(manifest.incognito, "not_allowed");
@@ -25,6 +26,8 @@ assert.equal(manifest.optional_host_permissions, undefined);
 assert.equal(manifest.content_scripts, undefined);
 assert.match(manifest.content_security_policy.extension_pages, /script-src 'self'/);
 assert.doesNotMatch(manifest.content_security_policy.extension_pages, /unsafe-|https?:/);
+assert.equal(packageMetadata.license, "MIT");
+assert.equal(packageMetadata.repository.url, "https://github.com/sihrc/singleton-tabs.git");
 
 const referencedFiles = [
   manifest.background.service_worker,
